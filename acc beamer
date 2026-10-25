@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Account Beamer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #1a1a1a;
+            color: white;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #0078d7;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #005fa3;
+        }
+        #beamLink {
+            word-break: break-all;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #3a3a3a;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Roblox Account Beamer</h1>
+        <p>Enter a Roblox username or ID to generate a beam link:</p>
+        <input type="text" id="usernameInput" placeholder="Username or ID">
+        <button onclick="generateBeamLink()">Generate Beam Link</button>
+        <div id="beamLink"></div>
+    </div>
+
+    <script>
+        function generateBeamLink() {
+            const username = document.getElementById('usernameInput').value.trim();
+            if (!username) {
+                alert("Please enter a username or ID!");
+                return;
+            }
+
+            // Generate the beam link (this is a placeholder; actual beam links may require Roblox exploits)
+            const beamLink = `javascript:window.location.href="https://www.roblox.com/users/${username}/profile"`;
+
+            // Display the link
+            const linkElement = document.getElementById('beamLink');
+            linkElement.innerHTML = `
+                <p>Your Beam Link:</p>
+                <a href="${beamLink}" target="_blank">${beamLink}</a>
+                <p><strong>Instructions:</strong> Drag this link to your bookmarks. Then, go to a Roblox profile and click the bookmark to "beam" into their account.</p>
+            `;
+        }
+    </script>
+</body>
+</html>
